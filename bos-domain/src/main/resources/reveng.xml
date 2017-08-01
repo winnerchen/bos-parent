@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<!-- 定义生成实体类规范  match-table 需要将那些表生成实体类   match-catalog 操作是哪一个数据库 -->
+
+  <schema-selection  match-table="t_user"  match-catalog="mavenbos"/>
+  <schema-selection match-table="t_standard" match-catalog="mavenbos"/>
+  <schema-selection  match-table="bc_.*"  match-catalog="mavenbos"/>
+  <!-- 取派 -->
+  <schema-selection  match-table="qp_.*"  match-catalog="mavenbos"/>
+  <schema-selection  match-table="city"  match-catalog="mavenbos"/>
+
+  <!-- 权限表生成 -->
+  <schema-selection  match-table="auth_.*"  match-catalog="mavenbos"/>
+  <schema-selection  match-table="role_function"  match-catalog="mavenbos"/>
+  <schema-selection  match-table="role_menu"  match-catalog="mavenbos"/>
+  <schema-selection  match-table="user_role"  match-catalog="mavenbos"/>
+
+  <!-- 生成权限对应实体类 -->
+  <table name="auth_function" catalog="mavenbos" class="cn.chen.bos.domain.auth.Function">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="auth_role" catalog="mavenbos" class="cn.chen.bos.domain.auth.Role">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="auth_menu" catalog="mavenbos" class="cn.chen.bos.domain.auth.Menu">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="t_user" catalog="mavenbos"
+         class="cn.chen.bos.domain.user.User">
+  </table>
+
+
+
+  <!-- 定义实体类生成规范 -->
+  <table name="t_user" catalog="mavenbos" class="cn.chen.bos.domain.user.User" />
+  <table name="t_standard" catalog="mavenbos" class="cn.chen.bos.domain.bc.Standard"/>
+
+  <!-- . 代表任意字符 * 代表0或者多个字符 -->
+  <!-- 实体类生成规则定义 -->
+  <!-- 基础设置表生成实体类规范定义 -->
+  <table name="bc_staff" catalog="mavenbos" class="cn.chen.bos.domain.bc.Staff">
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="bc_region" catalog="mavenbos" class="cn.chen.bos.domain.bc.Region">
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="bc_subarea" catalog="mavenbos" class="cn.chen.bos.domain.bc.Subarea">
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="bc_decidedzone" catalog="mavenbos" class="cn.chen.bos.domain.bc.DecidedZone">
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+
+
+
+  <!-- 实体类生成规则定义 -->
+  <!-- qupai模块 -->
+  <table name="qp_noticebill" catalog="mavenbos" class="cn.itcast.bos.domain.qp.NoticeBill">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="qp_workbill" catalog="mavenbos" class="cn.itcast.bos.domain.qp.WorkBill">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="qp_workordermanage" catalog="mavenbos"
+         class="cn.itcast.bos.domain.qp.WorkOrderManage">
+    <!-- assigend默认主键策略  修改主键策略 -->
+    <primary-key>
+      <generator class="uuid"></generator>
+    </primary-key>
+  </table>
+  <table name="city" catalog="_mavenbos"
+         class="cn.chen.bos.domain.city.City">
+  </table>
+
+
+
+
+</hibernate-reverse-engineering>

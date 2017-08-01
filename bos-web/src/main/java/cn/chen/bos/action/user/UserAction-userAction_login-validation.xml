@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+  		<validators>
+  		 <!-- field  name 值  表示  form 表单Input  name属性值    -->
+  		  <field name="email">
+  		     <!-- 选择对应校验器  type="校验器的名称"  -->
+  		      <field-validator type="requiredstring">
+  		       <!-- message  书写错误信息 -->
+  		         <message key="login.params.loginName.requiredstring.error"></message>
+  		      </field-validator>
+  		      <!-- 同一个字段 添加多个校验器  -->
+  		       <field-validator type="stringlength">
+  		       <!-- message  书写错误信息 -->
+  		         <param name="minLength">6</param>
+  		         <param name="maxLength">20</param>
+  		         <message key="login.params.loginName.stringlength.error"></message>
+  		      </field-validator>
+  		  </field>
+  		  <!-- 密码校验 -->
+  		    <field name="password">
+  		     <!-- 选择对应校验器  type="校验器的名称"  -->
+  		      <field-validator type="requiredstring">
+  		       <!-- message  书写错误信息 -->
+  		         <message key="login.params.loginPwd.requiredstring.error"></message>
+  		      </field-validator>
+  		      <!-- 同一个字段 添加多个校验器  -->
+  		       <field-validator type="stringlength">
+  		       <!-- message  书写错误信息 -->
+  		         <param name="minLength">1</param>
+  		         <param name="maxLength">10</param>
+  		         <message key="login.params.loginPwd.stringlength.error"></message>
+  		      </field-validator>
+  		  </field>
+  		</validators>

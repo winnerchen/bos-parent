@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- shiro 权限控制 -->
+    <bean id="shiroSecurityFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- shiro 的核心安全接口 -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 要求登录时的链接 -->
+        <property name="loginUrl" value="/login.jsp"/>
+        <!-- 登陆成功后要跳转的连接 -->
+        <property name="successUrl" value="/index.jsp"/>
+        <!-- 权限不足，跳转路径  -->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <!-- shiro 连接约束配置 -->
+        <!-- URL控制规则  路径=规则 -->
+        <property name="filterChainDefinitions">
+            <value>
+                /css/** = anon
+                /demo/** = anon
+                /images/** = anon
+                /js/** = anon
+                /json/** = anon
+                /login.jsp** = anon
+                /index.jsp** = authc
+                /validatecode.jsp** = anon
+                /userAction_login** = anon
+                /page_base_staff**=roles[base_admin]
+                /user/userAction_validCheckCode** = anon
+                /** = authc
+
+            </value>
+        </property>
+    </bean>
+    <bean id="bosRealm" class="cn.chen.bos.realm.BosRealm"/>
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager"
+          class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!-- 在安全管理器，应该注入 Realm 连接安全数据  -->
+        <property name="realm" ref="bosRealm"/>
+    </bean>
+
+</beans>
