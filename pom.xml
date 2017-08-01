@@ -61,11 +61,6 @@
                 <optional>true</optional>
                 <version>3.2.3</version>
             </dependency>
-            <dependency>
-                <groupId>cn.chen.dayu.heima04</groupId>
-                <artifactId>heima04dayu</artifactId>
-                <version>${dayu.version}</version>
-            </dependency>
 
             <!-- spring -->
             <dependency>
@@ -369,13 +364,13 @@
                 <artifactId>cxf-rt-frontend-jaxrs</artifactId>
                 <version>3.0.1</version>
             </dependency>
-
-
-
+            <dependency>
+                <groupId>cn.chen.dayu.heima04</groupId>
+                <artifactId>heima04dayu</artifactId>
+                <version>${dayu.version}</version>
+            </dependency>
         </dependencies>
-
     </dependencyManagement>
-
 
     <build>
         <pluginManagement>

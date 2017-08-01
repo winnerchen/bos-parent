@@ -12,10 +12,6 @@
     <artifactId>bos-utils</artifactId>
     <dependencies>
         <dependency>
-            <groupId>cn.chen.dayu.heima04</groupId>
-            <artifactId>heima04dayu</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
         </dependency>
@@ -30,6 +26,10 @@
         <dependency>
             <groupId>com.lowagie</groupId>
             <artifactId>itext</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.chen.dayu.heima04</groupId>
+            <artifactId>heima04dayu</artifactId>
         </dependency>
     </dependencies>
 
