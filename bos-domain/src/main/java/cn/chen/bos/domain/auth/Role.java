@@ -81,11 +81,11 @@ public class Role implements java.io.Serializable {
         this.description = description;
     }
 
-    @ManyToMany( fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "role_menu", catalog = "mavenbos", joinColumns = {
             @JoinColumn(name = "role_id", nullable = false, updatable = false)},
             inverseJoinColumns = {
-            @JoinColumn(name = "menu_id", nullable = false, updatable = false)})
+                    @JoinColumn(name = "menu_id", nullable = false, updatable = false)})
     public Set<Menu> getMenus() {
         return this.menus;
     }
@@ -94,11 +94,11 @@ public class Role implements java.io.Serializable {
         this.menus = menus;
     }
 
-    @ManyToMany( fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", catalog = "mavenbos", joinColumns = {
             @JoinColumn(name = "role_id", nullable = false, updatable = false)},
             inverseJoinColumns = {
-            @JoinColumn(name = "user_id", nullable = false, updatable = false)})
+                    @JoinColumn(name = "user_id", nullable = false, updatable = false)})
     public Set<User> getUsers() {
         return this.users;
     }
@@ -107,11 +107,11 @@ public class Role implements java.io.Serializable {
         this.users = users;
     }
 
-    @ManyToMany( fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "role_function", catalog = "mavenbos", joinColumns = {
             @JoinColumn(name = "role_id", nullable = false, updatable = false)},
             inverseJoinColumns = {
-            @JoinColumn(name = "function_id", nullable = false, updatable = false)})
+                    @JoinColumn(name = "function_id", nullable = false, updatable = false)})
     public Set<Function> getFunctions() {
         return this.functions;
     }

@@ -41,6 +41,7 @@ public class NoticeBillServiceImpl implements NoticeBillService {
     private DecidedZoneDao decidedZoneDao;
     @Autowired
     private WorkBillDao workBillDao;
+
     @Autowired
     @Qualifier("jmsQueueTemplate")
     private JmsTemplate jmsTemplate;
@@ -142,6 +143,7 @@ public class NoticeBillServiceImpl implements NoticeBillService {
                 String urlupdate = BaseInterface.CRM_BASE_URL + "/updateadressbyid/" + model.getCustomerId() + "/" + model.getPickaddress();
                 WebClient.create(urlupdate).put(null);
             }
+
 
         } else {
             // 新客户 crm系统录入客户信息 返回Cusotmer id String.valueOf(model.getCustomerId()) 新客户id是null字符串

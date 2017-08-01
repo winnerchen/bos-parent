@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.itcast.mavenbos</groupId>
+    <groupId>cn.chen.mavenbos</groupId>
     <artifactId>mavenbos</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -62,7 +62,7 @@
                 <version>3.2.3</version>
             </dependency>
             <dependency>
-                <groupId>cn.itcast.dayu.heima04</groupId>
+                <groupId>cn.chen.dayu.heima04</groupId>
                 <artifactId>heima04dayu</artifactId>
                 <version>${dayu.version}</version>
             </dependency>
